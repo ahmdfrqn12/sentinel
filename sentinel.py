@@ -59,6 +59,20 @@ kc = LINE()
 print('==== UNIT 4 READY ! ====')
 km = LINE()
 print('==== UNIT 5 READY ! ====')
+ka = LINE()
+print('==== UNIT 6 READY ! ====')
+kb = LINE()
+print('==== UNIT 7 READY ! ====')
+kd = LINE()
+print('==== UNIT 8 READY ! ====')
+ke = LINE()
+print('==== UNIT 9 READY ! ====')
+kf = LINE()
+print('==== UNIT 10 READY ! ====')
+kg = LINE()
+print('==== UNIT 11 READY ! ====')
+kh = LINE()
+print('==== UNIT 12 READY ! ====')
 print ('\n\nALL UNIT READY !')
 
 mid = cl.getProfile().mid
@@ -66,7 +80,14 @@ Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
 Cmid = kc.getProfile().mid
 Dmid = km.getProfile().mid
-KAC = [ki,kk,kc,km]
+Emid = ka.getProfile().mid
+Fmid = kb.getProfile().mid
+Gmid = kd.getProfile().mid
+Hmid = ke.getProfile().mid
+Imid = kf.getProfile().mid
+Jmid = kg.getProfile().mid
+Kmid = kh.getProfile().mid
+KAC = [ki,kk,kc,km,ka,kb,kd,ke,kf,kg,kh]
 
 loop = asyncio.get_event_loop()
 status = livejson.File('status.json', True, False, 4)
@@ -77,13 +98,20 @@ owner = status["owner"]
 admin = status["admin"]
 staff = status["staff"]
 mybots = status["mybots"]
-Bots = [mid,Amid,Bmid,Cmid,Dmid]
-Botslist = [cl,ki,kk,kc,km]
+Bots = [mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,Jmid,Kmid]
+Botslist = [cl,ki,kk,kc,km,ka,kb,kd,ke,kf,kg,kh]
 resp1 = cl.getProfile().displayName
 resp2 = ki.getProfile().displayName
 resp3 = kk.getProfile().displayName
 resp4 = kc.getProfile().displayName
 resp5 = km.getProfile().displayName
+resp6 = ka.getProfile().displayName
+resp7 = kb.getProfile().displayName
+resp8 = kd.getProfile().displayName
+resp9 = ke.getProfile().displayName
+resp10 = kf.getProfile().displayName
+resp11 = kg.getProfile().displayName
+resp12 = kh.getProfile().displayName
 
 for uwew in Botslist:
 	for uwewww in Bots:
@@ -187,7 +215,28 @@ def kick(grup, target):
 					try:
 						km.kickoutFromGroup(grup, [target])
 					except:
-						pass
+						try:
+						    ka.kickoutFromGroup(grup, [target])
+					    except:
+						    try:
+						        kb.kickoutFromGroup(grup, [target])
+					        except:
+						        try:
+						            kd.kickoutFromGroup(grup, [target])
+					            except:
+						            try:
+						                ke.kickoutFromGroup(grup, [target])
+					                except:
+						                try:
+						                    kf.kickoutFromGroup(grup, [target])
+					                    except:
+						                    try:
+						                        kg.kickoutFromGroup(grup, [target])
+					                        except:
+						                        try:
+						                            kh.kickoutFromGroup(grup, [target])
+					                            except:
+						                            pass
 
 def cancel(grup, target):
 	try:
@@ -205,7 +254,28 @@ def cancel(grup, target):
 					try:
 						km.cancelGroupInvitation(grup, [target])
 					except:
-						pass
+						try:
+		                    ka.cancelGroupInvitation(grup, [target])
+	                    except:
+		                    try:
+			                    kb.cancelGroupInvitation(grup, [target])
+		                    except:
+			                    try:
+				                    kd.cancelGroupInvitation(grup, [target])
+			                    except:
+				                    try:
+					                    ke.cancelGroupInvitation(grup, [target])
+				                    except:
+					                    try:
+						                    kf.cancelGroupInvitation(grup, [target])
+					                    except:
+						                    try:
+					                            kg.cancelGroupInvitation(grup, [target])
+				                            except:
+					                            try:
+						                            kh.cancelGroupInvitation(grup, [target])
+					                            except:
+						                            pass
 
 def lockqr(grup):
 	try:
@@ -233,7 +303,42 @@ def lockqr(grup):
 						G.preventedJoinByTicket = True
 						km.updateGroup(G)
 					except:
-						pass
+						try:
+						    G = ka.getGroup(grup)
+						    G.preventedJoinByTicket = True
+						    ka.updateGroup(G)
+					    except:
+						    try:
+						        G = kb.getGroup(grup)
+						        G.preventedJoinByTicket = True
+						        kb.updateGroup(G)
+					        except:
+						        try:
+						            G = kd.getGroup(grup)
+						            G.preventedJoinByTicket = True
+						            kd.updateGroup(G)
+					            except:
+						            try:
+						                G = ke.getGroup(grup)
+						                G.preventedJoinByTicket = True
+						                ke.updateGroup(G)
+					                except:
+						                try:
+						                    G = kf.getGroup(grup)
+						                    G.preventedJoinByTicket = True
+						                    kf.updateGroup(G)
+					                    except:
+						                    try:
+						                        G = kg.getGroup(grup)
+						                        G.preventedJoinByTicket = True
+						                        kg.updateGroup(G)
+					                        except:
+						                        try:
+						                            G = kh.getGroup(grup)
+						                            G.preventedJoinByTicket = True
+						                            kh.updateGroup(G)
+					                            except:
+						                            pass
 
 def backup(grup, target):
 	try:
@@ -246,17 +351,45 @@ def backup(grup, target):
 			kc.acceptGroupInvitation(grup)
 		if target == Dmid:
 			km.acceptGroupInvitation(grup)
+        if target == Emid:
+			ka.acceptGroupInvitation(grup)
+		if target == Fmid:
+			kb.acceptGroupInvitation(grup)
+		if target == Gmid:
+			kd.acceptGroupInvitation(grup)
+		if target == Hmid:
+			ke.acceptGroupInvitation(grup)
+		if target == Imid:
+			kf.acceptGroupInvitation(grup)
+		if target == Jmid:
+			kg.acceptGroupInvitation(grup)
+		if target == Kmid:
+			kh.acceptGroupInvitation(grup)
 	except:
 		try:
 			ki.inviteIntoGroup(grup, [target])
 			if target == mid:
 				cl.acceptGroupInvitation(grup)
 			if target == Bmid:
-				kk.acceptGroupInvitation(grup)
+		        kk.acceptGroupInvitation(grup)
 			if target == Cmid:
 				kc.acceptGroupInvitation(grup)
 			if target == Dmid:
 				km.acceptGroupInvitation(grup)
+			if target == Emid:
+			    ka.acceptGroupInvitation(grup)
+		    if target == Fmid:
+			    kb.acceptGroupInvitation(grup)
+		    if target == Gmid:
+			    kd.acceptGroupInvitation(grup)
+		    if target == Hmid:
+			    ke.acceptGroupInvitation(grup)
+		    if target == Imid:
+			    kf.acceptGroupInvitation(grup)
+		    if target == Jmid:
+			    kg.acceptGroupInvitation(grup)
+		    if target == Kmid:
+			    kh.acceptGroupInvitation(grup)
 		except:
 			try:
 				kk.inviteIntoGroup(grup, [target])
@@ -268,6 +401,20 @@ def backup(grup, target):
 					kc.acceptGroupInvitation(grup)
 				if target == Dmid:
 					km.acceptGroupInvitation(grup)
+				if target == Emid:
+			        ka.acceptGroupInvitation(grup)
+		        if target == Fmid:
+			        kb.acceptGroupInvitation(grup)
+		        if target == Gmid:
+			        kd.acceptGroupInvitation(grup)
+		        if target == Hmid:
+			        ke.acceptGroupInvitation(grup)
+		        if target == Imid:
+			        kf.acceptGroupInvitation(grup)
+		        if target == Jmid:
+			        kg.acceptGroupInvitation(grup)
+		        if target == Kmid:
+			        kh.acceptGroupInvitation(grup)
 			except:
 				try:
 					kc.inviteIntoGroup(grup, [target])
@@ -279,6 +426,20 @@ def backup(grup, target):
 						kk.acceptGroupInvitation(grup)
 					if target == Dmid:
 						km.acceptGroupInvitation(grup)
+					if target == Emid:
+			            ka.acceptGroupInvitation(grup)
+		            if target == Fmid:
+			            kb.acceptGroupInvitation(grup)
+		            if target == Gmid:
+			            kd.acceptGroupInvitation(grup)
+		            if target == Hmid:
+			            ke.acceptGroupInvitation(grup)
+		            if target == Imid:
+			            kf.acceptGroupInvitation(grup)
+		            if target == Jmid:
+			            kg.acceptGroupInvitation(grup)
+		            if target == Kmid:
+			            kh.acceptGroupInvitation(grup)
 				except:
 					try:
 						km.inviteIntoGroup(grup, [target])
@@ -290,8 +451,124 @@ def backup(grup, target):
 							kk.acceptGroupInvitation(grup)
 						if target == Cmid:
 							kc.acceptGroupInvitation(grup)
+						if target == Emid:
+			                ka.acceptGroupInvitation(grup)
+		                if target == Fmid:
+			                kb.acceptGroupInvitation(grup)
+		                if target == Gmid:
+			                kd.acceptGroupInvitation(grup)
+		                if target == Hmid:
+			                ke.acceptGroupInvitation(grup)
+		                if target == Imid:
+			                kf.acceptGroupInvitation(grup)
+		                if target == Jmid:
+			                kg.acceptGroupInvitation(grup)
+		                if target == Kmid:
+			                kh.acceptGroupInvitation(grup)
 					except:
-						pass
+						try:
+						    ka.inviteIntoGroup(grup, [target])
+						    if target == mid:
+							    cl.acceptGroupInvitation(grup)
+						    if target == Amid:
+							    ki.acceptGroupInvitation(grup)
+						    if target == Bmid:
+							    kk.acceptGroupInvitation(grup)
+						    if target == Cmid:
+							    kc.acceptGroupInvitation(grup)
+						    if target == Dmid:
+			                    km.acceptGroupInvitation(grup)
+		                    if target == Fmid:
+			                    kb.acceptGroupInvitation(grup)
+		                    if target == Gmid:
+			                    kd.acceptGroupInvitation(grup)
+		                    if target == Hmid:
+			                    ke.acceptGroupInvitation(grup)
+		                    if target == Imid:
+			                    kf.acceptGroupInvitation(grup)
+		                    if target == Jmid:
+			                    kg.acceptGroupInvitation(grup)
+		                    if target == Kmid:
+			                    kh.acceptGroupInvitation(grup)
+					    except:
+						    try:
+						        kb.inviteIntoGroup(grup, [target])
+						        if target == mid:
+							        cl.acceptGroupInvitation(grup)
+						        if target == Amid:
+							        ki.acceptGroupInvitation(grup)
+						        if target == Bmid:
+							        kk.acceptGroupInvitation(grup)
+						        if target == Cmid:
+							        kc.acceptGroupInvitation(grup)
+						        if target == Dmid:
+			                        km.acceptGroupInvitation(grup)
+		                        if target == Emid:
+			                        ka.acceptGroupInvitation(grup)
+		                        if target == Gmid:
+			                        kd.acceptGroupInvitation(grup)
+		                        if target == Hmid:
+			                        ke.acceptGroupInvitation(grup)
+		                        if target == Imid:
+			                        kf.acceptGroupInvitation(grup)
+		                        if target == Jmid:
+			                        kg.acceptGroupInvitation(grup)
+		                        if target == Kmid:
+			                        kh.acceptGroupInvitation(grup)
+					       except:
+						       try:
+						           kd.inviteIntoGroup(grup, [target])
+						           if target == mid:
+							           cl.acceptGroupInvitation(grup)
+						           if target == Amid:
+							           ki.acceptGroupInvitation(grup)
+						           if target == Bmid:
+							           kk.acceptGroupInvitation(grup)
+						           if target == Cmid:
+							           kc.acceptGroupInvitation(grup)
+						           if target == Dmid:
+			                           km.acceptGroupInvitation(grup)
+		                           if target == Emid:
+			                           ka.acceptGroupInvitation(grup)
+		                           if target == Fmid:
+			                           kb.acceptGroupInvitation(grup)
+		                           if target == Hmid:
+			                           ke.acceptGroupInvitation(grup)
+		                           if target == Imid:
+			                           kf.acceptGroupInvitation(grup)
+		                           if target == Jmid:
+			                           kg.acceptGroupInvitation(grup)
+		                           if target == Kmid:
+			                           kh.acceptGroupInvitation(grup)
+					           except:
+						           try:
+						               random.choice(KAC).inviteIntoGroup(grup, [target])
+						               if target == mid:
+							               cl.acceptGroupInvitation(grup)
+						               if target == Amid:
+							               ki.acceptGroupInvitation(grup)
+						               if target == Bmid:
+							               kk.acceptGroupInvitation(grup)
+						               if target == Cmid:
+							               kc.acceptGroupInvitation(grup)
+						               if target == Dmid:
+			                               km.acceptGroupInvitation(grup)
+		                               if target == Emid:
+			                               ka.acceptGroupInvitation(grup)
+		                               if target == Fmid:
+			                               kb.acceptGroupInvitation(grup)
+			                           if target == Gmid:
+			                               kd.acceptGroupInvitation(grup)
+		                               if target == Hmid:
+			                               ke.acceptGroupInvitation(grup)
+		                               if target == Imid:
+			                               kf.acceptGroupInvitation(grup)
+		                               if target == Jmid:
+			                               kg.acceptGroupInvitation(grup)
+		                               if target == Kmid:
+			                               kh.acceptGroupInvitation(grup)
+					               except:
+						               pass
 
 def invite(grup, target):
 	try:
@@ -314,7 +591,11 @@ def invite(grup, target):
 						km.findAndAddContactsByMid(target)
 						km.inviteIntoGroup(grup, [target])
 					except:
-						pass
+						try:
+						    random.choice(KAC).findAndAddContactsByMid(target)
+						    random.choice(KAC).inviteIntoGroup(grup, [target])
+					    except:
+						    pass
 
 def blacklist(target):
 	try:
@@ -348,6 +629,41 @@ def logspeed():
 	return "「 Bots Speed 」\n • Took : %.3fms\n • Taken: %.5f" % (get_profile_took,get_profile_time)
 	get_profile_time_start = time.time()
 	get_profile = km.getProfile()
+	get_profile_time = time.time() - get_profile_time_start
+	get_profile_took = time.time() - get_profile_time_start
+	return "「 Bots Speed 」\n • Took : %.3fms\n • Taken: %.5f" % (get_profile_took,get_profile_time)
+	get_profile_time_start = time.time()
+	get_profile = ka.getProfile()
+	get_profile_time = time.time() - get_profile_time_start
+	get_profile_took = time.time() - get_profile_time_start
+	return "「 Bots Speed 」\n • Took : %.3fms\n • Taken: %.5f" % (get_profile_took,get_profile_time)
+	get_profile_time_start = time.time()
+	get_profile = kb.getProfile()
+	get_profile_time = time.time() - get_profile_time_start
+	get_profile_took = time.time() - get_profile_time_start
+	return "「 Bots Speed 」\n • Took : %.3fms\n • Taken: %.5f" % (get_profile_took,get_profile_time)
+	get_profile_time_start = time.time()
+	get_profile = kd.getProfile()
+	get_profile_time = time.time() - get_profile_time_start
+	get_profile_took = time.time() - get_profile_time_start
+	return "「 Bots Speed 」\n • Took : %.3fms\n • Taken: %.5f" % (get_profile_took,get_profile_time)
+	get_profile_time_start = time.time()
+	get_profile = ke.getProfile()
+	get_profile_time = time.time() - get_profile_time_start
+	get_profile_took = time.time() - get_profile_time_start
+	return "「 Bots Speed 」\n • Took : %.3fms\n • Taken: %.5f" % (get_profile_took,get_profile_time)
+	get_profile_time_start = time.time()
+	get_profile = kf.getProfile()
+	get_profile_time = time.time() - get_profile_time_start
+	get_profile_took = time.time() - get_profile_time_start
+	return "「 Bots Speed 」\n • Took : %.3fms\n • Taken: %.5f" % (get_profile_took,get_profile_time)
+	get_profile_time_start = time.time()
+	get_profile = kg.getProfile()
+	get_profile_time = time.time() - get_profile_time_start
+	get_profile_took = time.time() - get_profile_time_start
+	return "「 Bots Speed 」\n • Took : %.3fms\n • Taken: %.5f" % (get_profile_took,get_profile_time)
+	get_profile_time_start = time.time()
+	get_profile = kh.getProfile()
 	get_profile_time = time.time() - get_profile_time_start
 	get_profile_took = time.time() - get_profile_time_start
 	return "「 Bots Speed 」\n • Took : %.3fms\n • Taken: %.5f" % (get_profile_took,get_profile_time)
@@ -425,6 +741,41 @@ def RECEIVE_MESSAGE(op):
 					del settings["sentinelPict"][Dmid]
 					km.updateProfilePicture(path)
 					km.sendReplyMessage(reply,receiver,"「 Profile Picture 」\nSuccess Change Profile Picture")
+				if Emid in settings["sentinelPict"]:
+					path = ka.downloadObjectMsg(msg.id)
+					del settings["sentinelPict"][Emid]
+					ka.updateProfilePicture(path)
+					ka.sendReplyMessage(reply,receiver,"「 Profile Picture 」\nSuccess Change Profile Picture")
+				if Fmid in settings["sentinelPict"]:
+					path = kb.downloadObjectMsg(msg.id)
+					del settings["sentinelPict"][Fmid]
+					kb.updateProfilePicture(path)
+					kb.sendReplyMessage(reply,receiver,"「 Profile Picture 」\nSuccess Change Profile Picture")
+				if Gmid in settings["sentinelPict"]:
+					path = kd.downloadObjectMsg(msg.id)
+					del settings["sentinelPict"][Gmid]
+					kd.updateProfilePicture(path)
+					kd.sendReplyMessage(reply,receiver,"「 Profile Picture 」\nSuccess Change Profile Picture")
+				if Hmid in settings["sentinelPict"]:
+					path = ke.downloadObjectMsg(msg.id)
+					del settings["sentinelPict"][Hmid]
+					ke.updateProfilePicture(path)
+					ke.sendReplyMessage(reply,receiver,"「 Profile Picture 」\nSuccess Change Profile Picture")
+				if Imid in settings["sentinelPict"]:
+					path = kf.downloadObjectMsg(msg.id)
+					del settings["sentinelPict"][Imid]
+					kf.updateProfilePicture(path)
+					kf.sendReplyMessage(reply,receiver,"「 Profile Picture 」\nSuccess Change Profile Picture")
+				if Jmid in settings["sentinelPict"]:
+					path = kg.downloadObjectMsg(msg.id)
+					del settings["sentinelPict"][Jmid]
+					kg.updateProfilePicture(path)
+					kg.sendReplyMessage(reply,receiver,"「 Profile Picture 」\nSuccess Change Profile Picture")
+				if Kmid in settings["sentinelPict"]:
+					path = kh.downloadObjectMsg(msg.id)
+					del settings["sentinelPict"][Kmid]
+					kh.updateProfilePicture(path)
+					kh.sendReplyMessage(reply,receiver,"「 Profile Picture 」\nSuccess Change Profile Picture")
 		if msg.contentType == 0:
 			if text is None:
 				return
@@ -454,6 +805,13 @@ def RECEIVE_MESSAGE(op):
 						kk.sendReplyMessage(reply,receiver,"「 {} 」".format(resp3))
 						kc.sendReplyMessage(reply,receiver,"「 {} 」".format(resp4))
 						km.sendReplyMessage(reply,receiver,"「 {} 」".format(resp5))
+						ka.sendReplyMessage(reply,receiver,"「 {} 」".format(resp6))
+						kb.sendReplyMessage(reply,receiver,"「 {} 」".format(resp7))
+						kd.sendReplyMessage(reply,receiver,"「 {} 」".format(resp8))
+						ke.sendReplyMessage(reply,receiver,"「 {} 」".format(resp9))
+						kf.sendReplyMessage(reply,receiver,"「 {} 」".format(resp10))
+						kg.sendReplyMessage(reply,receiver,"「 {} 」".format(resp11))
+						kh.sendReplyMessage(reply,receiver,"「 {} 」".format(resp12))
 				elif uwew == "speed":
 					if sender in creator or sender in owner or sender in admin or sender in staff:
 						cl.sendReplyMessage(reply,receiver,logspeed())
@@ -461,6 +819,13 @@ def RECEIVE_MESSAGE(op):
 						kk.sendReplyMessage(reply,receiver,logspeed())
 						kc.sendReplyMessage(reply,receiver,logspeed())
 						km.sendReplyMessage(reply,receiver,logspeed())
+						ka.sendReplyMessage(reply,receiver,logspeed())
+						kb.sendReplyMessage(reply,receiver,logspeed())
+						kd.sendReplyMessage(reply,receiver,logspeed())
+						ke.sendReplyMessage(reply,receiver,logspeed())
+						kf.sendReplyMessage(reply,receiver,logspeed())
+						kg.sendReplyMessage(reply,receiver,logspeed())
+						kh.sendReplyMessage(reply,receiver,logspeed())
 				elif uwew == "byeall":
 					if sender in creator or sender in owner or sender in admin or sender in staff:
 						for bot in Botslist:
@@ -468,11 +833,17 @@ def RECEIVE_MESSAGE(op):
 				elif uwew == "inviteall":
 					if sender in creator or sender in owner or sender in admin or sender in staff:
 						try:
-							cl.inviteIntoGroup(receiver, [Amid,Bmid,Cmid,Dmid])
+							cl.inviteIntoGroup(receiver, [Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,Jmid,Kmid])
 							ki.acceptGroupInvitation(receiver)
 							kk.acceptGroupInvitation(receiver)
 							kc.acceptGroupInvitation(receiver)
 							km.acceptGroupInvitation(receiver)
+							ka.acceptGroupInvitation(receiver)
+							kb.acceptGroupInvitation(receiver)
+							kd.acceptGroupInvitation(receiver)
+							ke.acceptGroupInvitation(receiver)
+							kf.acceptGroupInvitation(receiver)
+							kh.acceptGroupInvitation(receiver)
 						except TalkException as talk_error:
 							if talk_error.code == 35:
 								G = cl.getGroup(receiver)
@@ -515,7 +886,7 @@ def RECEIVE_MESSAGE(op):
 							a = a + 1
 							end = '\n'
 							ma += '┣ ' + str(a) + ". " +cl.getContact(anu).displayName + "\n"
-						cl.sendReplyMessage(reply,receiver, "┏━ sᴇɴᴛɪɴᴇʟ™\n┣━━━━ List Bots\n"+ma+"┗━ Total「%s」Bots" %(str(len(mybots))))
+						cl.sendReplyMessage(reply,receiver, "┏━ ADT\n┣━━━━ List Bots\n"+ma+"┗━ Total「%s」Bots" %(str(len(mybots))))
 				elif uwew == "view bots":
 					if sender in creator or sender in owner or sender in admin or sender in staff:
 						ma = ""
@@ -524,7 +895,7 @@ def RECEIVE_MESSAGE(op):
 							a = a + 1
 							end = '\n'
 							ma += '┣ ' + str(a) + ". " +cl.getContact(anu).displayName + "\n"
-						cl.sendReplyMessage(reply,receiver, "┏━ sᴇɴᴛɪɴᴇʟ™\n┣━━━━ List Bots\n"+ma+"┗━ Total「%s」Bots" %(str(len(Bots))))
+						cl.sendReplyMessage(reply,receiver, "┏━ ADT\n┣━━━━ List Bots\n"+ma+"┗━ Total「%s」Bots" %(str(len(Bots))))
 				elif uwew == "view access":
 					if sender in creator or sender in owner or sender in admin or sender in staff:
 						ma = ""
@@ -551,7 +922,7 @@ def RECEIVE_MESSAGE(op):
 							d = d + 1
 							end = '\n'
 							md += '┣ ' + str(d) + ". " +cl.getContact(anu).displayName + "\n"
-						cl.sendReplyMessage(msg.id, to, "┏╸sᴇɴᴛɪɴᴇʟ™\n┣━━━━ List Access\n┣━━━━ Creator\n"+ma+"┣━━━━ Owner\n"+mb+"┣━━━━ Admin\n"+mc+"┣━━━━ Staff\n"+md+"┗━ Total「%s」Access" %(str(len(creator)+len(owner)+len(admin)+len(staff))))
+						cl.sendReplyMessage(msg.id, to, "┏╸ADT\n┣━━━━ List Access\n┣━━━━ Creator\n"+ma+"┣━━━━ Owner\n"+mb+"┣━━━━ Admin\n"+mc+"┣━━━━ Staff\n"+md+"┗━ Total「%s」Access" %(str(len(creator)+len(owner)+len(admin)+len(staff))))
 				elif uwew.startswith("add owner"):
 					if sender in creator:
 						key = eval(msg.contentMetadata["MENTION"])
@@ -1114,6 +1485,62 @@ async def cerberusRun():
 									km.acceptGroupInvitation(op.param1)
 									sendMention(op.param1,"Sorry @!,\nI Will Leave Because You Doesn't Have Access -_-",[op.param2])
 									km.leaveGroup(op.param1)
+						if Emid in op.param3:
+							if settings["autoJoin"] == True:
+								if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+									ka.acceptGroupInvitation(op.param1)
+								else:
+									ka.acceptGroupInvitation(op.param1)
+									sendMention(op.param1,"Sorry @!,\nI Will Leave Because You Doesn't Have Access -_-",[op.param2])
+									ka.leaveGroup(op.param1)
+						if Fmid in op.param3:
+							if settings["autoJoin"] == True:
+								if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+									kb.acceptGroupInvitation(op.param1)
+								else:
+									kb.acceptGroupInvitation(op.param1)
+									sendMention(op.param1,"Sorry @!,\nI Will Leave Because You Doesn't Have Access -_-",[op.param2])
+									kb.leaveGroup(op.param1)
+						if Gmid in op.param3:
+							if settings["autoJoin"] == True:
+								if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+									kd.acceptGroupInvitation(op.param1)
+								else:
+									kd.acceptGroupInvitation(op.param1)
+									sendMention(op.param1,"Sorry @!,\nI Will Leave Because You Doesn't Have Access -_-",[op.param2])
+									kd.leaveGroup(op.param1)
+						if Hmid in op.param3:
+							if settings["autoJoin"] == True:
+								if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+									ke.acceptGroupInvitation(op.param1)
+								else:
+									ke.acceptGroupInvitation(op.param1)
+									sendMention(op.param1,"Sorry @!,\nI Will Leave Because You Doesn't Have Access -_-",[op.param2])
+									ke.leaveGroup(op.param1)
+						if Imid in op.param3:
+							if settings["autoJoin"] == True:
+								if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+									kf.acceptGroupInvitation(op.param1)
+								else:
+									kf.acceptGroupInvitation(op.param1)
+									sendMention(op.param1,"Sorry @!,\nI Will Leave Because You Doesn't Have Access -_-",[op.param2])
+									kf.leaveGroup(op.param1)
+						if Jmid in op.param3:
+							if settings["autoJoin"] == True:
+								if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+									kg.acceptGroupInvitation(op.param1)
+								else:
+									kg.acceptGroupInvitation(op.param1)
+									sendMention(op.param1,"Sorry @!,\nI Will Leave Because You Doesn't Have Access -_-",[op.param2])
+									kg.leaveGroup(op.param1)
+						if Kmid in op.param3:
+							if settings["autoJoin"] == True:
+								if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+									kh.acceptGroupInvitation(op.param1)
+								else:
+									kh.acceptGroupInvitation(op.param1)
+									sendMention(op.param1,"Sorry @!,\nI Will Leave Because You Doesn't Have Access -_-",[op.param2])
+									kh.leaveGroup(op.param1)
 					if op.type == 17:
 						if op.param1 in status["lock"]:
 							if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
@@ -1195,6 +1622,83 @@ async def cerberusRun():
 									rdwn9 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
 									rdwn10 = threading.Thread(target=backup, args=(op.param1, op.param3)).start()
 									rdwn11 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+								except:
+									pass
+						if op.param3 in Emid:
+							if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+								pass
+							else:
+								rdwn12 = threading.Thread(target=blacklist, args=(op.param2,)).start()
+								try:
+									rdwn13 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+									rdwn14 = threading.Thread(target=backup, args=(op.param1, op.param3)).start()
+									rdwn15 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+								except:
+									pass
+						if op.param3 in Fmid:
+							if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+								pass
+							else:
+								rdwn16 = threading.Thread(target=blacklist, args=(op.param2,)).start()
+								try:
+									rdwn17 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+									rdwn18 = threading.Thread(target=backup, args=(op.param1, op.param3)).start()
+									rdwn19 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+								except:
+									pass
+						if op.param3 in Gmid:
+							if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+								pass
+							else:
+								rdwn20 = threading.Thread(target=blacklist, args=(op.param2,)).start()
+								try:
+									rdwn21 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+									rdwn22 = threading.Thread(target=backup, args=(op.param1, op.param3)).start()
+									rdwn23 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+								except:
+									pass
+						if op.param3 in Hmid:
+							if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+								pass
+							else:
+								rdwn24 = threading.Thread(target=blacklist, args=(op.param2,)).start()
+								try:
+									rdwn25 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+									rdwn26 = threading.Thread(target=backup, args=(op.param1, op.param3)).start()
+									rdwn27 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+								except:
+									pass
+						if op.param3 in Imid:
+							if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+								pass
+							else:
+								rdwn28 = threading.Thread(target=blacklist, args=(op.param2,)).start()
+								try:
+									rdwn29 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+									rdwn30 = threading.Thread(target=backup, args=(op.param1, op.param3)).start()
+									rdwn31 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+								except:
+									pass
+						if op.param3 in Jmid:
+							if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+								pass
+							else:
+								rdwn32 = threading.Thread(target=blacklist, args=(op.param2,)).start()
+								try:
+									rdwn33 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+									rdwn34 = threading.Thread(target=backup, args=(op.param1, op.param3)).start()
+									rdwn35 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+								except:
+									pass
+						if op.param3 in Kmid:
+							if op.param2 in creator or op.param2 in owner or op.param2 in admin or op.param2 in staff or op.param2 in Bots or op.param2 in mybots:
+								pass
+							else:
+								rdwn36 = threading.Thread(target=blacklist, args=(op.param2,)).start()
+								try:
+									rdwn37 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
+									rdwn38 = threading.Thread(target=backup, args=(op.param1, op.param3)).start()
+									rdwn39 = threading.Thread(target=kick, args=(op.param1, op.param2)).start()
 								except:
 									pass
 					if op.type == 32:
